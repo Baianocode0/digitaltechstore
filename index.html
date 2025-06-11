@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -44,3 +45,36 @@
   <script src="script.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>DigitalTechStore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Digital Tech Store</h1>
+    <a href="#" onclick="abrirCarrinho()">🛒 Carrinho (<span id="quantidadeCarrinho">0</span>)</a>
+  </header>
+
+  <main id="produtosContainer">
+    <!-- Produtos serão exibidos aqui -->
+  </main>
+
+  <!-- Carrinho -->
+  <section id="carrinhoModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Seu Carrinho</h2>
+      <div id="itensCarrinho"></div>
+      <p><strong>Total:</strong> R$ <span id="totalCarrinho">0.00</span></p>
+      <button onclick="finalizarPedido()">Finalizar Pedido</button>
+      <button onclick="fecharCarrinho()">Fechar</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+>>>>>>> 0974a40c5cb94d94645eea4fcfa06ea48092afbd
