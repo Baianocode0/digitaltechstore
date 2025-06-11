@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>DigitalTechStore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Digital Tech Store</h1>
+    <a href="#" onclick="abrirCarrinho()">🛒 Carrinho (<span id="quantidadeCarrinho">0</span>)</a>
+  </header>
+
+  <main id="produtosContainer">
+    <!-- Produtos serão exibidos aqui -->
+  </main>
+
+  <!-- Modal Carrinho -->
+  <section id="carrinhoModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Seu Carrinho</h2>
+      <div id="itensCarrinho"></div>
+      <p><strong>Total:</strong> R$ <span id="totalCarrinho">0.00</span></p>
+      <button onclick="finalizarPedido()">Finalizar Pedido</button>
+      <button onclick="fecharCarrinho()">Fechar</button>
+    </div>
+  </section>
+
+  <!-- Modal Admin -->
+  <section id="adminPanel" class="modal hidden">
+    <div class="modal-content">
+      <h2>Adicionar Produto</h2>
+      <input type="text" id="nomeProduto" placeholder="Nome do produto"><br><br>
+      <input type="number" id="precoProduto" placeholder="Preço"><br><br>
+      <input type="text" id="imagemProduto" placeholder="URL da imagem"><br><br>
+      <button onclick="salvarProduto()">Salvar Produto</button>
+      <button onclick="fecharAdmin()">Fechar</button>
+    </div>
+  </section>
+
+  <!-- Botão flutuante admin -->
+  <button id="abrirAdminBtn" onclick="abrirAdmin()">➕</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
