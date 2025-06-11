@@ -32,6 +32,11 @@ main {
   width: 220px;
   padding: 1rem;
   text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
@@ -58,6 +63,7 @@ main {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .card button:hover {
@@ -75,6 +81,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal-content {
@@ -101,4 +115,25 @@ main {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#abrirAdminBtn:hover {
+  background: #27ae60;
+}
+
+/* Mensagem toast */
+.mensagem-toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2ecc71;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  font-weight: bold;
+  z-index: 1000;
 }

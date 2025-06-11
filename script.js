@@ -25,6 +25,7 @@ function adicionarAoCarrinho(index) {
   carrinho.push(produtos[index]);
   localStorage.setItem('carrinho', JSON.stringify(carrinho));
   atualizarQuantidadeCarrinho();
+  mostrarMensagem("Produto adicionado ao carrinho!");
 }
 
 function atualizarQuantidadeCarrinho() {
@@ -52,9 +53,17 @@ function finalizarPedido() {
   window.location.reload();
 }
 
-// Painel admin
+// ----------- Login admin simples -----------
+
+const senhaAdmin = "senha123";
+
 function abrirAdmin() {
-  document.getElementById('adminPanel').classList.remove('hidden');
+  const senha = prompt("Digite a senha de admin:");
+  if (senha === senhaAdmin) {
+    document.getElementById('adminPanel').classList.remove('hidden');
+  } else {
+    alert("Senha incorreta!");
+  }
 }
 
 function fecharAdmin() {
@@ -75,6 +84,28 @@ function salvarProduto() {
   localStorage.setItem('produtos', JSON.stringify(produtos));
   fecharAdmin();
   renderizarProdutos();
+  mostrarMensagem("Produto adicionado com sucesso!");
+}
+
+// ----------- Mensagens e animações -----------
+
+function mostrarMensagem(texto) {
+  let msgDiv = document.createElement('div');
+  msgDiv.className = 'mensagem-toast';
+  msgDiv.textContent = texto;
+  document.body.appendChild(msgDiv);
+
+  // Aparecer e sumir suavemente
+  setTimeout(() => {
+    msgDiv.style.opacity = '1';
+  }, 10);
+
+  setTimeout(() => {
+    msgDiv.style.opacity = '0';
+    setTimeout(() => {
+      document.body.removeChild(msgDiv);
+    }, 500);
+  }, 3000);
 }
 
 renderizarProdutos();
